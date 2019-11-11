@@ -204,6 +204,68 @@ void isPalindrome()
     //return 1;
 }
 
+void insert_any(){
+	cout<<"Enter the element where you want to insert data"<<endl;
+	int mid;
+	cin>>mid;
+	cout<<"Enter which data you want to insert"<<endl;
+	int n;
+	cin>>n;
+	struct node *curr = head;
+	struct node *prev;
+	while(curr->next!=NULL && curr->data!=mid){
+		prev=curr;
+		curr=curr->next;
+	}
+	struct node *temp=(struct node *)malloc(sizeof(struct node *));
+	//curr->next = temp;
+	temp->data = n;
+	temp->next = curr->next;
+	curr->next=temp;
+	
+	display();
+	cout<<endl;
+}
+
+void delete_beg(){
+	head = head->next;
+	display();
+	cout<<endl;
+}
+
+void delete_last(){
+	struct node *curr = head;
+	struct node *prev;
+	while(curr->next!=NULL){
+		prev = curr;
+		curr = curr->next;
+	}
+	prev->next = NULL;
+	display();
+	cout<<endl;
+ }
+
+void delete_any(){
+	cout<<"Enter which element you want to delete"<<endl;
+	int n;
+	cin>>n;
+	struct node *curr = head;
+	struct node *prev;
+	if(head->data == n){
+		head = head->next;
+		
+	}
+	else{
+	while(curr->next!=NULL && curr->data!=n){
+		prev = curr;
+		curr = curr->next;
+	}
+	prev->next = curr->next;
+}
+	display();
+	cout<<endl;
+}
+
 int main(){
 	
 	cout<<"****** Enter to the linked list world *****"<<endl<<endl;
@@ -240,19 +302,19 @@ int main(){
 			insert_beg();
 			break;
 		case 3:
-			//insert_mid();
+			insert_any();
 			break;
 		case 4:
 			insert_last();
 			break;
 		case 5:
-			//delete_beg();
+			delete_beg();
 			break;
 		case 6:
-			//delete_mid();
+			delete_any();
 			break;
 		case 7:
-			//delete_last();
+			delete_last();
 			break;
 		case 8:
 			display();
