@@ -6,13 +6,7 @@ struct node{
 	struct node *next;
 };
 struct node *head=NULL;
-//void insert();
-//void insert_beg();
-//void insert_mid();
-//void insert_last();
-//void delete_beg();
-//void delete_mid();
-//void delete_last();
+
 void display();
 
 void create(){
