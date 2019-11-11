@@ -1,7 +1,4 @@
 #include<iostream>
-#include<stdio.h>
-#include<stack>
-#include<stdlib.h>
 #include<bits/stdc++.h>
 using namespace std;
 struct node{
