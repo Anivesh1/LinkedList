@@ -1,4 +1,7 @@
 #include<iostream>
+#include<stdio.h>
+#include<stack>
+#include<stdlib.h>
 #include<bits/stdc++.h>
 using namespace std;
 struct node{
@@ -6,7 +9,13 @@ struct node{
 	struct node *next;
 };
 struct node *head=NULL;
-
+//void insert();
+//void insert_beg();
+//void insert_mid();
+//void insert_last();
+//void delete_beg();
+//void delete_mid();
+//void delete_last();
 void display();
 
 void create(){
@@ -45,7 +54,7 @@ void display(){
 		cout<<temp->data<<" ";
 		temp=temp->next;
 	}
-	cout<<endl;
+	cout<<endl<<endl;
 }
 
 void insert_beg(){
@@ -275,17 +284,13 @@ int main(){
 	cout<<"11. For finding nth last node from linked list"<<endl;
 	cout<<"12. For reversing linked list"<<endl;
 	cout<<"13. For checking linked list is palindrome or not"<<endl;
-
-
-
-
-	//cout<<"10. For exiting linked list"<<endl;
+	cout<<"14. For exiting linked list"<<endl;
 
 
 	int ch;
 	cin>>ch;
 	
-	switch(ch){
+	switch(ch){ 
 		case 1:
 			create();
 			break;
@@ -324,7 +329,10 @@ int main(){
 			break;	
 		case 13:
 			isPalindrome();
-			break;							
+			break;
+		case 14:
+			exit(0);
+			break;								
 		default:
 			cout<<"Please Enter Valid option"<<endl;
 			break;						
