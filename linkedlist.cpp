@@ -266,6 +266,41 @@ void delete_any(){
 	cout<<endl;
 }
 
+void linkdelete(struct node  *head)
+{
+	int M,N;
+	cout<<"Enter how many element you want to skip"<<endl;
+	cin>>M;
+	cout<<"Now Enter how many element you want to delete"<<endl;
+	cin>>N;
+ 
+    int sk=M;
+    int de=N;
+    struct node *curr=head;
+    struct node *skip=head;
+    struct node *prev=NULL;
+    while(curr!=NULL){
+    
+    while(sk-- && skip){
+    prev=skip;
+    skip=skip->next;
+    }
+    sk=M;
+    curr=skip;
+    while(de-- && skip){
+    	skip=skip->next;
+    }
+    de=N;
+    prev->next=skip;
+    curr=skip;
+
+
+    }
+	display();
+	cout<<endl;
+
+}
+
 int main(){
 	
 	cout<<"****** Enter to the linked list world *****"<<endl<<endl;
@@ -284,7 +319,8 @@ int main(){
 	cout<<"11. For finding nth last node from linked list"<<endl;
 	cout<<"12. For reversing linked list"<<endl;
 	cout<<"13. For checking linked list is palindrome or not"<<endl;
-	cout<<"14. For exiting linked list"<<endl;
+	cout<<"14. For skipping M nodes and deleting N nodes in Linked List"<<endl;
+	cout<<"15. For exiting linked list"<<endl;
 
 
 	int ch;
@@ -331,6 +367,9 @@ int main(){
 			isPalindrome();
 			break;
 		case 14:
+			linkdelete(head);
+			break;	
+		case 15:
 			exit(0);
 			break;								
 		default:
